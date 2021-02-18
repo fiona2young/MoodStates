@@ -53,9 +53,7 @@ function draw() {
   // will call your state machine function
   drawFunction();
     
-  for( let i = 0 ; i < strings.length; i++ ) {
-  		text( strings[i], midX, startY + (i * lineHeight) )
-  }
+  loadInstructions();
 }
 
 //========= TEMPLATE: modify these functions, INSIDE the function blocks only =========
@@ -65,6 +63,13 @@ drawSplash = function() {
     
    fill(98, 168, 140);
    text("Click to see instrustions", width/2, height - gTextOffset);
+}
+
+drawInstructions = function() {
+   fill(98, 168, 140);
+   for( let i = 0 ; i < strings.length; i++ ) {
+    text( strings[i], midX, startY + (i * lineHeight) )
+  }
 }
 
 //-- drawOne() will draw the image at index 0 from the array
@@ -108,6 +113,7 @@ drawFive = function() {
 }
 
 
+
 //========= TEMPLATE: add or change interface functions, as you like =========
 
 // Change the drawFunction variable based on your interaction
@@ -145,6 +151,6 @@ function loadInstructions() {
 
 function mousePressed() {
   if( drawFunction === drawSplash ) {
-    drawFunction = loadInstructions;
+    drawFunction = drawInstructions;
   }
 }
