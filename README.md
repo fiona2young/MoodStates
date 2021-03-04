@@ -3,7 +3,7 @@
 
 
 ### Overview
-A simple state machine that goes between five states
+A simple state machine that goes between five states.
 
 
 ### How it works
